@@ -24,6 +24,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           emit(HomeError(errorMessage: e.message));
         } on SocketException {
           emit(HomeError(errorMessage: "No internet"));
+        } on HandshakeException {
+          emit(
+            HomeError(
+                errorMessage:
+                    "Couldnot establish secure connection with server"),
+          );
         } catch (e) {
           emit(HomeError(errorMessage: e.toString()));
         }

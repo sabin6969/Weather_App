@@ -18,14 +18,17 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.white,
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(
-            15.sp,
-          ),
-          borderSide: const BorderSide(
-            color: Colors.black,
-          )),
+        borderRadius: BorderRadius.circular(
+          15.sp,
+        ),
+        borderSide: const BorderSide(
+          color: Colors.black,
+        ),
+      ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(
+          15.sp,
+        ),
         borderSide: const BorderSide(
           color: Colors.black,
         ),
@@ -56,7 +59,9 @@ class AppTheme {
         ),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(
+          15.sp,
+        ),
         borderSide: const BorderSide(
           color: Colors.white,
         ),

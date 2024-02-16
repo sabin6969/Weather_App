@@ -23,6 +23,13 @@ class DisplayWeatherData extends StatelessWidget {
       children: [
         TextFormField(
           controller: cityNameController,
+          onFieldSubmitted: (value) {
+            context.read<HomeBloc>().add(
+                  HomeLoadWeatherData(
+                    city: cityNameController.text,
+                  ),
+                );
+          },
           decoration: InputDecoration(
             prefixIcon: IconButton(
               onPressed: () {
@@ -73,7 +80,7 @@ class DisplayWeatherData extends StatelessWidget {
           height: 30.h,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: [
@@ -113,7 +120,7 @@ class DisplayWeatherData extends StatelessWidget {
           height: 20.h,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: [

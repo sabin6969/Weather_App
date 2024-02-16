@@ -20,6 +20,13 @@ class RequesteCityNotFound extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            onFieldSubmitted: (value) {
+              context.read<HomeBloc>().add(
+                    HomeLoadWeatherData(
+                      city: cityNameController.text,
+                    ),
+                  );
+            },
             controller: cityNameController,
             decoration: InputDecoration(
               prefixIcon: IconButton(

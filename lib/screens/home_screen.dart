@@ -30,43 +30,45 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 20.w,
-            vertical: 30.h,
-          ),
-          child: BlocBuilder(
-            bloc: homeBloc,
-            builder: (context, state) {
-              if (state is HomeLoading) {
-                return SizedBox(
-                  height: size.height,
-                  width: size.width,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Lottie.asset(AppAnimationPath.weatherDataLoading),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      const CircularProgressIndicator()
-                    ],
-                  ),
-                );
-              } else if (state is HomeLoaded) {
-                return DisplayWeatherData(
-                  cityNameController: _cityNameController,
-                  state: state,
-                );
-              } else if (state is HomeError) {
-                return RequesteCityNotFound(
-                  cityNameController: _cityNameController,
-                  state: state,
-                );
-              } else {
-                return const Center();
-              }
-            },
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 30.w,
+              // vertical: 30.h,
+            ),
+            child: BlocBuilder(
+              bloc: homeBloc,
+              builder: (context, state) {
+                if (state is HomeLoading) {
+                  return SizedBox(
+                    height: size.height,
+                    width: size.width,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Lottie.asset(AppAnimationPath.weatherDataLoading),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        const CircularProgressIndicator()
+                      ],
+                    ),
+                  );
+                } else if (state is HomeLoaded) {
+                  return DisplayWeatherData(
+                    cityNameController: _cityNameController,
+                    state: state,
+                  );
+                } else if (state is HomeError) {
+                  return RequesteCityNotFound(
+                    cityNameController: _cityNameController,
+                    state: state,
+                  );
+                } else {
+                  return const Center();
+                }
+              },
+            ),
           ),
         ),
       ),
