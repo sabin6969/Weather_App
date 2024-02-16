@@ -23,10 +23,8 @@ class WeatherServices {
       case 401:
         throw UnAuthorizedException();
       case 404:
-        String body = response.body;
-        var jsonData = jsonDecode(body);
-        NotFound notFound = NotFound.fromJson(jsonData);
-        throw NotFoundException(message: notFound.message);
+        throw NotFoundException(
+            message: "Weather data of requested city not found");
       case 500:
         throw InternalServerException();
       default:

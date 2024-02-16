@@ -22,5 +22,7 @@ class InternalServerException extends AppException {
 
 class NotFoundException extends AppException {
   NotFoundException({String? message})
-      : super(message: "Requested city not found");
+      : super(
+          message: "Weather of requested city is not available",
+        );
 }

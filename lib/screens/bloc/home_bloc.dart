@@ -25,7 +25,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         } on SocketException {
           emit(HomeError(errorMessage: "No internet"));
         } catch (e) {
-          emit(HomeError(errorMessage: "Requested city not found"));
+          emit(HomeError(errorMessage: e.toString()));
         }
       },
     );

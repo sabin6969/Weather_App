@@ -20,6 +20,8 @@ dependencies:
   shimmer: ^3.0.0
   geolocator: ^11.0.0
   flutter_screenutil: ^5.9.0
+  intl: ^0.19.0
+  lottie: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -32,8 +34,8 @@ flutter:
 
 
   assets:
-  #   - images/a_dot_burr.jpeg
-    # - images/a_dot_ham.jpeg
+    - assets/images/
+    - assets/animations/
     - .env
 
 
