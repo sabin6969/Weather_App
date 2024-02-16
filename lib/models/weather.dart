@@ -116,9 +116,9 @@ class Clouds {
 }
 
 class Wind {
-  double? speed;
+  num? speed;
   int? deg;
-  double? gust;
+  num? gust;
 
   Wind({this.speed, this.deg, this.gust});
 
@@ -138,10 +138,10 @@ class Wind {
 }
 
 class Main {
-  double? temp;
-  double? feelsLike;
-  double? tempMin;
-  double? tempMax;
+  num? temp;
+  num? feelsLike;
+  num? tempMin;
+  num? tempMax;
   int? pressure;
   int? humidity;
   int? seaLevel;
@@ -208,8 +208,8 @@ class Weather1 {
 }
 
 class Coord {
-  double? lon;
-  double? lat;
+  num? lon;
+  num? lat;
 
   Coord({this.lon, this.lat});
 

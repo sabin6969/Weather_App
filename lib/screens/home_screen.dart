@@ -8,7 +8,13 @@ import 'package:weather_app/widgets/display_weather_data.dart';
 import 'package:weather_app/widgets/requested_city_not_found.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final double lat;
+  final double long;
+  const HomeScreen({
+    super.key,
+    required this.lat,
+    required this.long,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -19,7 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    context.read<HomeBloc>().add(HomeLoadWeatherData(city: "Pokhara"));
+    context.read<HomeBloc>().add(HomeLoadWeatherDataWithLatLon(
+          lat: widget.lat,
+          lon: widget.long,
+        ));
     super.initState();
   }
 
@@ -33,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 30.w,
+              horizontal: 15.w,
               // vertical: 30.h,
             ),
             child: BlocBuilder(

@@ -22,7 +22,7 @@ class RequesteCityNotFound extends StatelessWidget {
           TextFormField(
             onFieldSubmitted: (value) {
               context.read<HomeBloc>().add(
-                    HomeLoadWeatherData(
+                    HomeLoadWeatherDataWithCity(
                       city: cityNameController.text,
                     ),
                   );
@@ -32,7 +32,7 @@ class RequesteCityNotFound extends StatelessWidget {
               prefixIcon: IconButton(
                 onPressed: () {
                   context.read<HomeBloc>().add(
-                        HomeLoadWeatherData(
+                        HomeLoadWeatherDataWithCity(
                           city: cityNameController.text,
                         ),
                       );

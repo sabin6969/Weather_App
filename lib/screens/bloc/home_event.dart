@@ -2,7 +2,13 @@ part of 'home_bloc.dart';
 
 sealed class HomeEvent {}
 
-final class HomeLoadWeatherData extends HomeEvent {
+final class HomeLoadWeatherDataWithCity extends HomeEvent {
   final String city;
-  HomeLoadWeatherData({required this.city});
+  HomeLoadWeatherDataWithCity({required this.city});
+}
+
+final class HomeLoadWeatherDataWithLatLon extends HomeEvent {
+  final double lat;
+  final double lon;
+  HomeLoadWeatherDataWithLatLon({required this.lat, required this.lon});
 }

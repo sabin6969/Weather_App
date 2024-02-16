@@ -25,7 +25,7 @@ class DisplayWeatherData extends StatelessWidget {
           controller: cityNameController,
           onFieldSubmitted: (value) {
             context.read<HomeBloc>().add(
-                  HomeLoadWeatherData(
+                  HomeLoadWeatherDataWithCity(
                     city: cityNameController.text,
                   ),
                 );
@@ -34,7 +34,7 @@ class DisplayWeatherData extends StatelessWidget {
             prefixIcon: IconButton(
               onPressed: () {
                 context.read<HomeBloc>().add(
-                      HomeLoadWeatherData(
+                      HomeLoadWeatherDataWithCity(
                         city: cityNameController.text,
                       ),
                     );
