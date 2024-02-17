@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -10,6 +11,7 @@ import 'package:geolocator/geolocator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   Position position = await _determinePosition();
   await dotenv.load(fileName: ".env");
   runApp(MyApp(
@@ -58,19 +60,16 @@ Future<Position> _determinePosition() async {
   LocationPermission permission;
   serviceEnabled = await Geolocator.isLocationServiceEnabled();
   if (!serviceEnabled) {
-    return Future.error('Location services are disabled.');
-  }
-
-  permission = await Geolocator.checkPermission();
-  if (permission == LocationPermission.denied) {
-    permission = await Geolocator.requestPermission();
+    permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        openAppSettings();
+      }
+    }
+    if (permission == LocationPermission.deniedForever) {
       openAppSettings();
     }
-  }
-
-  if (permission == LocationPermission.deniedForever) {
-    openAppSettings();
   }
   return await Geolocator.getCurrentPosition();
 }

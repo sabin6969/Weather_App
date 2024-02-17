@@ -23,6 +23,8 @@ class DisplayWeatherData extends StatelessWidget {
       children: [
         TextFormField(
           controller: cityNameController,
+          keyboardType: TextInputType.name,
+          textCapitalization: TextCapitalization.sentences,
           onFieldSubmitted: (value) {
             context.read<HomeBloc>().add(
                   HomeLoadWeatherDataWithCity(

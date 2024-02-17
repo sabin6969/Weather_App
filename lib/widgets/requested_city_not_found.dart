@@ -18,8 +18,11 @@ class RequesteCityNotFound extends StatelessWidget {
       height: size.height,
       width: size.width,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextFormField(
+            textCapitalization: TextCapitalization.sentences,
+            keyboardType: TextInputType.name,
             onFieldSubmitted: (value) {
               context.read<HomeBloc>().add(
                     HomeLoadWeatherDataWithCity(
