@@ -80,7 +80,7 @@ class DisplayWeatherData extends StatelessWidget {
           height: 30.h,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
               children: [
@@ -120,7 +120,7 @@ class DisplayWeatherData extends StatelessWidget {
           height: 20.h,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
               children: [

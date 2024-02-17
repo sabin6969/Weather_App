@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 15.w,
+              horizontal: 20.w,
               // vertical: 30.h,
             ),
             child: BlocBuilder(

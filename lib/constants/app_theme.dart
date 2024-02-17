@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+    fontFamily: "Poppins",
     brightness: Brightness.light,
     iconTheme: IconThemeData(
       color: Colors.black,
@@ -19,7 +20,7 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(
-          15.sp,
+          10.sp,
         ),
         borderSide: const BorderSide(
           color: Colors.black,
@@ -27,7 +28,7 @@ class AppTheme {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(
-          15.sp,
+          10.sp,
         ),
         borderSide: const BorderSide(
           color: Colors.black,
@@ -36,6 +37,7 @@ class AppTheme {
     ),
   );
   static ThemeData darkTheme = ThemeData(
+    fontFamily: "Poppins",
     brightness: Brightness.dark,
     iconTheme: IconThemeData(
       color: Colors.white,
@@ -52,7 +54,7 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(
-          15.sp,
+          10.sp,
         ),
         borderSide: const BorderSide(
           color: Colors.white,
@@ -60,7 +62,7 @@ class AppTheme {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(
-          15.sp,
+          10.sp,
         ),
         borderSide: const BorderSide(
           color: Colors.white,
