@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:weather_app/constants/app_theme.dart';
 import 'package:weather_app/screens/bloc/home_bloc.dart';
 import 'package:weather_app/screens/home_screen.dart';
@@ -64,13 +65,12 @@ Future<Position> _determinePosition() async {
   if (permission == LocationPermission.denied) {
     permission = await Geolocator.requestPermission();
     if (permission == LocationPermission.denied) {
-      return Future.error('Location permissions are denied');
+      openAppSettings();
     }
   }
 
   if (permission == LocationPermission.deniedForever) {
-    return Future.error(
-        'Location permissions are permanently denied, we cannot request permissions.');
+    openAppSettings();
   }
   return await Geolocator.getCurrentPosition();
 }
