@@ -18,7 +18,7 @@ class RequesteCityNotFound extends StatelessWidget {
       height: size.height,
       width: size.width,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TextFormField(
             textCapitalization: TextCapitalization.sentences,
