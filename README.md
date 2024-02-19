@@ -1,16 +1,44 @@
-# weather_app
+# Weather Fetcher App
 
-A new Flutter project.
+This Flutter application is designed to fetch weather data from various locations using a remote server and an API. It provides users with up-to-date weather information for their desired locations.
+
+## Features
+
+- Fetch weather data from remote server
+- Display weather information for different locations
+- User-friendly interface
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with this app, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Rename `example.env` file to `.env`.
+4. Obtain your own API key from OpenWeather and replace `Your API KEY HERE` in `.env` file with your API key. You can sign up for a free API key on the [OpenWeather website](https://openweathermap.org/).
+5. Run the app on a simulator or a physical device.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Dependencies
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This app relies on the following dependencies:
+
+- `flutter_bloc` for state management
+- `http` for making HTTP requests
+- `dotenv` for managing environment variables
+
+## Usage
+
+Once the app is running, you can:
+
+- Enter the desired location to fetch weather data.
+- View the weather information displayed on the screen.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify this project for your own purposes.
+
+---
